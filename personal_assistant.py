@@ -5,11 +5,9 @@ pyttsx3.speak("Hello There! This is your personal assistant. I can make your lif
 pyttsx3.speak("Please Enter Your Name to make your experience more enjoyable: ")
 name = input("You entered : ")
       
-Assistant_working = True
-
-while Assistant_working:
+while True:
     pyttsx3.speak("Hey!"+ name +"What would you like me to do for you ?")
-    
+
     command = input("What would you like me to do for you ? ").lower()
     
     if "open chrome" in command or "run chrome" in command or "chrome" in command:
@@ -34,8 +32,8 @@ while Assistant_working:
              
     elif "stop" in command or "exit" in command or "bye" in command or "quit" in command:
         pyttsx3.speak("It was a pleasure talking to you! "+ name +" see you later! bye !")
-        Assistant_working = False
-                
+        break
+      
     else:
         pyttsx3.speak("Sorry, but the command you are looking for is currently unavailable. We are working behind the scene to make it available for you. Have a Good day!")
         
